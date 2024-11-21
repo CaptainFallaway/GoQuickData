@@ -5,6 +5,8 @@ type Options struct {
 	chunkSize     int
 }
 
+type OptFunc func(*Options)
+
 // NewOptions returns a new Options struct with default values
 func NewOptions() *Options {
 	return &Options{
@@ -13,15 +15,13 @@ func NewOptions() *Options {
 	}
 }
 
-type OptFunc func(*Options)
-
-func WorkerAmmount[T any](ammount int) OptFunc {
+func WorkerAmmount(ammount int) OptFunc {
 	return func(qr *Options) {
 		qr.workerAmmount = ammount
 	}
 }
 
-func ChunkSize[T any](size int) OptFunc {
+func ChunkSize(size int) OptFunc {
 	return func(qr *Options) {
 		qr.chunkSize = size
 	}

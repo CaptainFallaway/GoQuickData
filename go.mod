@@ -1,4 +1,4 @@
-module github.com/CaptainFallaway/QuickReducer
+module github.com/CaptainFallaway/GoQuickData
 
 go 1.23.0
 
