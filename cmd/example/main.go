@@ -3,8 +3,6 @@ package main
 import (
 	"bufio"
 	"os"
-
-	goquickdata "github.com/CaptainFallaway/GoQuickData"
 )
 
 func main() {
@@ -13,7 +11,5 @@ func main() {
 		panic(err)
 	}
 
-	scanner := bufio.NewScanner(file)
-
-	goquickdata.NewQuickReducer[any](scanner, goquickdata.WorkerAmmount(4), goquickdata.ChunkSize(100))
+	bufio.NewScanner(file)
 }
