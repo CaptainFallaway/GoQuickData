@@ -13,7 +13,7 @@ type Scannable interface {
 }
 
 type DataFile struct {
-	scanner *bufio.Scanner
+	Scanner *bufio.Scanner
 	closer  io.Closer
 }
 
@@ -27,7 +27,7 @@ func OpenFile(path string) (*DataFile, error) {
 		return nil, err
 	}
 	scanner := bufio.NewScanner(file)
-	return &DataFile{scanner: scanner, closer: file}, nil
+	return &DataFile{Scanner: scanner, closer: file}, nil
 }
 
 func OpenFileMmap(path string) (*DataFile, error) {
@@ -36,5 +36,5 @@ func OpenFileMmap(path string) (*DataFile, error) {
 		return nil, err
 	}
 	scanner := bufio.NewScanner(mmapFile)
-	return &DataFile{scanner: scanner, closer: mmapFile}, nil
+	return &DataFile{Scanner: scanner, closer: mmapFile}, nil
 }

@@ -19,7 +19,7 @@ func main() {
 
 	actual := time.Now()
 
-	scanner := file.GetScanner()
+	scanner := file.Scanner
 
 	scanner.Split(bufio.ScanLines)
 	scanner.Text()
